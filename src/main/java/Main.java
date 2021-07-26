@@ -5,9 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 
 
-public class Main {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe");
+public class Main
+{
+    public static void main(String[] args)
+    {
+        //dvir: "webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe"
+        //Elad : "webdriver.chrome.driver","C:\\Users\\User\\chromedriver_win32\\chromedriver.exe"
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.aac.ac.il/");
         driver.findElement(By.className("info-btn")).findElement(By.tagName("a")).click();
@@ -19,7 +23,6 @@ public class Main {
         password.sendKeys("ofrit1204");
         driver.findElement(By.id("wp-submit")).click();
         driver.get(driver.getCurrentUrl());
-
 
     }
 }
