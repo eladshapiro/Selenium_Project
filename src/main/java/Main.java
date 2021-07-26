@@ -17,6 +17,7 @@ public class Main
         WebElement personalInfo=driver.findElement(By.className("info-btn")).findElement(By.tagName("a"));
         System.out.println(personalInfo.getText());
         personalInfo.click();
+        driver.manage().window().maximize();
         try
         {
             Thread.sleep(1000);
