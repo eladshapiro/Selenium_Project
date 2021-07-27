@@ -31,7 +31,6 @@ public class Main
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.aac.ac.il/");
         WebElement personalInfo=driver.findElement(By.className("info-btn")).findElement(By.tagName("a"));
-        System.out.println(personalInfo.getText());
         personalInfo.click();
         driver.manage().window().maximize();
         String MainWindow=driver.getWindowHandle();
@@ -56,5 +55,7 @@ public class Main
         WebElement password= driver.findElement(By.id("Ecom_Password"));
         password.sendKeys("ofrit1204");
         driver.findElement(By.id("wp-submit")).click();
+        driver.findElement(By.linkText("מערכת Moodle")).click();
+
     }
 }
