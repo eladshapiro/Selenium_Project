@@ -16,7 +16,6 @@ public class Main
       }
       catch (IOException e)
       {
-
       }
 
 
@@ -27,7 +26,7 @@ public class Main
     {
         //dvir: "webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe"
         //Elad : "webdriver.chrome.driver","C:\\Users\\User\\chromedriver_win32\\chromedriver.exe"
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.aac.ac.il/");
         WebElement personalInfo=driver.findElement(By.className("info-btn")).findElement(By.tagName("a"));
@@ -56,6 +55,15 @@ public class Main
         password.sendKeys("ofrit1204");
         driver.findElement(By.id("wp-submit")).click();
         driver.findElement(By.linkText("מערכת Moodle")).click();
+        //courses
+        System.out.println(driver.findElements(By.className("aalink coursename")).size());
+
+
+
+
+    }
+    public static void courses() throws IOException
+    {
 
     }
 }
