@@ -11,7 +11,7 @@ import java.util.Set;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         try {
             enter();
         } catch (IOException e) {
@@ -21,7 +21,7 @@ public class Main {
     }
 
 
-    public static void enter() throws IOException {
+    public static void enter() throws IOException, InterruptedException {
         //dvir: "webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe"
         //Elad : "webdriver.chrome.driver","C:\\Users\\User\\chromedriver_win32\\chromedriver.exe"
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -52,15 +52,12 @@ public class Main {
         password.sendKeys("ofrit1204");
         driver.findElement(By.id("wp-submit")).click();
         driver.findElement(By.linkText("מערכת Moodle")).click();
-        WebElement container = driver.findElement(By.id("region-main"));
-            List<WebElement> menuShow = container.findElements(By.className("d-sm-inline-block"));
-            menuShow.get(2).click();
-            List<WebElement> styleOptions =container.findElements(By.tagName("a"));
-            styleOptions.get(12).click();
+
         /*//COURSES_ELEMENTS*/
-            WebElement cursesButton = driver.findElement(By.id("page-container-2"));
-            List<WebElement> coursesList = cursesButton.findElements(By.tagName("h6"));
-        System.out.println(coursesList.size());
+        new Scanner(System.in).next();
+//        List<WebElement> coursesList= driver.findElements(By.className("aalink coursename"));
+//        System.out.println(coursesList.size());
+        System.out.println(driver.findElements(By.cssSelector("a[class = 'aalink coursename']")));
 
         //courses
 
