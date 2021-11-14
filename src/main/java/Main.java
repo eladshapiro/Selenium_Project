@@ -89,7 +89,7 @@ public class Main
         driver.manage().window().maximize();
 
         //log out
-        Thread.sleep(2000);   //wait to see the opened site
+    Thread.sleep(2000);   //wait to see the opened site
         driver.findElement(By.id("action-menu-toggle-1")).click();
         driver.findElement(By.linkText("התנתקות")).click();
         driver.findElement(By.linkText("יציאה")).click();
